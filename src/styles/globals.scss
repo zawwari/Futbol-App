@@ -1,0 +1,414 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+// Custom CSS variables for Tailwind v3 compatibility
+:root {
+  --breakpoint-sx: 320px;
+  --breakpoint-xs: 475px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+  --breakpoint-3xl: 1920px;
+
+  --color-fitt-white: #ffffff;
+  --color-fitt-gray: #d9d9d9;
+  --color-fitt-yellow: #cff419;
+
+  --font-family-reedo: "Reedo", sans-serif;
+  --font-family-wanted-sans: "Wanted Sans Variable", "Wanted Sans", sans-serif;
+}
+
+// Smooth scroll behavior
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 120px; // Adjust based on your sticky header height
+}
+
+// Fade transition for navigation
+body {
+  transition: opacity 0.3s ease-out;
+}
+
+// Section scroll margin for better positioning
+section,
+[id] {
+  scroll-margin-top: 120px;
+}
+
+/* Reedo Font Face Declarations */
+@font-face {
+  font-family: "Reedo";
+  src: url("/fonts/reedo/Reedo Regular.woff2") format("woff2"),
+    url("/fonts/reedo/Reedo Regular.woff") format("woff"),
+    url("/fonts/reedo/Reedo Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Reedo";
+  src: url("/fonts/reedo/Reedo Bold.woff2") format("woff2"),
+    url("/fonts/reedo/Reedo Bold.woff") format("woff"),
+    url("/fonts/reedo/Reedo Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Wanted Sans Font Face Declarations */
+@font-face {
+  font-family: "Wanted Sans Variable";
+  src: url("/fonts/WantedSans/WantedSansVariable-BF65baf13a24667.ttf")
+    format("truetype-variations");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Wanted Sans";
+  src: url("/fonts/WantedSans/WantedSans-Regular-BF65baf13579965.otf")
+    format("opentype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Wanted Sans";
+  src: url("/fonts/WantedSans/WantedSans-Medium-BF65baf1388963b.otf")
+    format("opentype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Wanted Sans";
+  src: url("/fonts/WantedSans/WantedSans-SemiBold-BF65baf13722853.otf")
+    format("opentype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Wanted Sans";
+  src: url("/fonts/WantedSans/WantedSans-Bold-BF65baf135d5a25.otf")
+    format("opentype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Wanted Sans";
+  src: url("/fonts/WantedSans/WantedSans-ExtraBold-BF65baf137317a5.otf")
+    format("opentype");
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Wanted Sans";
+  src: url("/fonts/WantedSans/WantedSans-Black-BF65baf1369b817.otf")
+    format("opentype");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Wanted Sans";
+  src: url("/fonts/WantedSans/WantedSans-ExtraBlack-BF65baf133c4859.otf")
+    format("opentype");
+  font-weight: 950;
+  font-style: normal;
+  font-display: swap;
+}
+
+// Base styles using SCSS nesting
+html,
+body {
+  max-width: 100vw;
+  overflow-x: hidden;
+}
+
+body {
+  color: var(--foreground);
+  background: linear-gradient(to bottom, transparent, var(--background))
+    var(--background);
+}
+
+:root {
+  --foreground: #000000;
+  --background: #ffffff;
+
+  @media (prefers-color-scheme: dark) {
+    --foreground: #ffffff;
+    --background: #000000;
+  }
+}
+
+// SCSS variables for common colors
+$fitt-yellow: #cff419;
+$fitt-white: #ffffff;
+$fitt-gray: #d9d9d9;
+$fitt-black: #000000;
+
+// Common Text Styles using SCSS nesting and variables
+.Reedo_yellow_bold_34 {
+  font-family: var(--font-family-reedo);
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 2.25rem;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: $fitt-yellow;
+}
+
+.Reedo_yellow_bold_32 {
+  font-family: var(--font-family-reedo);
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 39px;
+  text-transform: uppercase;
+  color: $fitt-yellow;
+}
+
+.Reedo_yellow_bold_22 {
+  font-family: var(--font-family-reedo);
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 26px;
+  text-transform: uppercase;
+  color: $fitt-yellow;
+}
+
+.Reedo_yellow_bold_16 {
+  font-family: var(--font-family-reedo);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  text-transform: uppercase;
+  color: $fitt-yellow;
+}
+
+.Reedo_yellow_bold_14 {
+  font-family: var(--font-family-reedo);
+  font-weight: 700;
+  font-size: 14px;
+  line-height: 17px;
+  text-transform: uppercase;
+  color: $fitt-yellow;
+}
+
+.Reedo_yellow_bold_12 {
+  font-family: var(--font-family-reedo);
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+  text-transform: uppercase;
+  color: $fitt-yellow;
+}
+
+// White Reedo styles
+.Reedo_white_bold_56 {
+  font-family: var(--font-family-reedo);
+  font-weight: 700;
+  font-size: 56px;
+  line-height: 67px;
+  text-transform: uppercase;
+  color: $fitt-white;
+}
+
+.Reedo_white_bold_44 {
+  font-family: var(--font-family-reedo);
+  font-weight: 700;
+  font-size: 44px;
+  line-height: 53px;
+  text-transform: uppercase;
+  color: $fitt-white;
+}
+
+.Reedo_white_bold_36 {
+  font-family: var(--font-family-reedo);
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 43px;
+  text-transform: uppercase;
+  color: $fitt-white;
+}
+
+.Reedo_white_bold_32 {
+  font-family: var(--font-family-reedo);
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 39px;
+  text-transform: uppercase;
+  color: $fitt-white;
+}
+
+.Reedo_white_bold_30 {
+  font-family: var(--font-family-reedo);
+  font-weight: 700;
+  font-size: 30px;
+  line-height: 36px;
+  text-transform: uppercase;
+  color: $fitt-white;
+}
+
+.Reedo_white_bold_22 {
+  font-family: var(--font-family-reedo);
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 26px;
+  text-transform: uppercase;
+  color: $fitt-white;
+}
+
+.Reedo_white_bold_16 {
+  font-family: var(--font-family-reedo);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  text-transform: uppercase;
+  color: $fitt-white;
+}
+
+.Reedo_white_bold_12 {
+  font-family: var(--font-family-reedo);
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+  text-transform: uppercase;
+  color: $fitt-white;
+}
+
+// Black Reedo styles
+.Reedo_black_bold_44 {
+  font-family: var(--font-family-reedo);
+  font-weight: 700;
+  font-size: 44px;
+  line-height: 53px;
+  text-transform: uppercase;
+  color: $fitt-black;
+}
+
+.Reedo_black_bold_36 {
+  font-family: var(--font-family-reedo);
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 43px;
+  text-transform: uppercase;
+  color: $fitt-black;
+}
+
+.Reedo_black_bold_34 {
+  font-family: var(--font-family-reedo);
+  font-weight: 700;
+  font-size: 34px;
+  line-height: 41px;
+  text-transform: uppercase;
+  color: $fitt-black;
+}
+
+.Reedo_black_bold_32 {
+  font-family: var(--font-family-reedo);
+  font-weight: 700;
+  font-size: 32px;
+  line-height: 39px;
+  text-transform: uppercase;
+  color: $fitt-black;
+}
+
+.Reedo_black_bold_22 {
+  font-family: var(--font-family-reedo);
+  font-weight: 700;
+  font-size: 22px;
+  line-height: 26px;
+  text-transform: uppercase;
+  color: $fitt-black;
+}
+
+.Reedo_black_bold_16 {
+  font-family: var(--font-family-reedo);
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  text-transform: uppercase;
+  color: $fitt-black;
+}
+
+// Gray Reedo styles
+.Reedo_gray_bold_36 {
+  font-family: var(--font-family-reedo);
+  font-weight: 700;
+  font-size: 36px;
+  line-height: 43px;
+  text-transform: uppercase;
+  color: $fitt-gray;
+}
+
+.Reedo_gray_bold_12 {
+  font-family: var(--font-family-reedo);
+  font-weight: 700;
+  font-size: 12px;
+  line-height: 14px;
+  text-transform: uppercase;
+  color: $fitt-gray;
+}
+
+// Wanted Sans styles
+.Wanted_sans_white_light_24 {
+  font-family: var(--font-family-wanted-sans);
+  font-weight: 300;
+  font-size: 24px;
+  line-height: 29px;
+  color: $fitt-white;
+}
+
+.Wanted_sans_white_light_16 {
+  font-family: var(--font-family-wanted-sans);
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+  color: $fitt-white;
+}
+
+.Wanted_sans_gray_light_16 {
+  font-family: var(--font-family-wanted-sans);
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+  color: $fitt-gray;
+}
+
+.Wanted_sans_gray_light_14 {
+  font-family: var(--font-family-wanted-sans);
+  font-weight: 300;
+  font-size: 14px;
+  line-height: 17px;
+  color: $fitt-gray;
+}
+
+.Wanted_sans_gray_light_9 {
+  font-family: var(--font-family-wanted-sans);
+  font-weight: 300;
+  font-size: 9px;
+  line-height: 11px;
+  color: $fitt-gray;
+}
+
+.Wanted_sans_black_light_16 {
+  font-family: var(--font-family-wanted-sans);
+  font-weight: 300;
+  font-size: 16px;
+  line-height: 19px;
+  color: $fitt-black;
+}
